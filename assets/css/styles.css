@@ -355,29 +355,6 @@ a:hover{color:var(--teal-800)}
 @media (min-width:640px){.foot__grid{grid-template-columns:1fr 1fr}}
 @media (min-width:1024px){.foot{padding-bottom:48px}.foot__grid{grid-template-columns:1.2fr 1fr 1fr 1.2fr;gap:48px}}
 
-/* ============ AVISO CONVÊNIOS ============ */
-.notice{width:min(440px,calc(100vw - 32px));padding:40px 32px 32px;border:0;border-radius:var(--r-lg);background:#fff;color:var(--gray-700);text-align:center;box-shadow:0 40px 80px -30px rgba(8,47,44,.5)}
-.notice::backdrop{background:rgba(8,47,44,.55);backdrop-filter:blur(3px)}
-.notice[open]{animation:notice-in .35s var(--ease)}
-@keyframes notice-in{from{opacity:0;transform:translateY(12px) scale(.97)}}
-.notice__x{position:absolute;top:10px;right:10px;width:44px;height:44px;border:0;border-radius:50%;background:none;font-size:1.75rem;line-height:1;color:var(--gray-700);cursor:pointer}
-.notice__x:hover{background:var(--teal-50)}
-.notice__ico{display:inline-grid;place-items:center;width:56px;height:56px;border-radius:50%;background:var(--teal-50);color:var(--teal-700)}
-.notice__ico svg{width:28px;height:28px}
-.notice__t{margin-top:18px;font-size:1.5rem;letter-spacing:-.02em}
-.notice p{margin-top:12px;font-size:1rem;line-height:1.6}
-.notice p strong{color:var(--ink)}
-.notice__acts{display:grid;justify-items:center;gap:8px;margin-top:28px}
-
-/* ============ FAB WHATSAPP ============ */
-.fab{position:fixed;right:max(18px,env(safe-area-inset-right));bottom:calc(18px + env(safe-area-inset-bottom));z-index:50;width:60px;height:60px;border-radius:50%;display:grid;place-items:center;background:var(--teal-700);color:#fff;
-  box-shadow:0 14px 30px -12px rgba(8,47,44,.55);transition:background .3s}
-.fab:hover{background:var(--teal-800);color:#fff}
-.fab svg{width:28px;height:28px;fill:currentColor}
-.fab::before{content:"";position:absolute;inset:0;border-radius:50%;border:1.5px solid var(--teal);animation:halo 3.6s var(--ease) infinite}
-@keyframes halo{0%{transform:scale(1);opacity:.7}60%,100%{transform:scale(1.45);opacity:0}}
-@media (min-width:1024px){.fab{right:32px;bottom:32px}}
-
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation:none!important;transition:none!important}
   .js [data-reveal]{opacity:1;transform:none}

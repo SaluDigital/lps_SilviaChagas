@@ -80,23 +80,4 @@
       so.observe(sh);
     }
   }
-
-  /* Aviso de convênios: exibido uma vez por visita, antes de abrir o WhatsApp */
-  var dlg = d.getElementById('aviso-convenio');
-  if (dlg && typeof dlg.showModal === 'function') {
-    var go = dlg.querySelector('[data-notice-go]');
-    var seen = function () { try { return sessionStorage.getItem('aviso-convenio') === '1'; } catch (e) { return false; } };
-    var mark = function () { try { sessionStorage.setItem('aviso-convenio', '1'); } catch (e) {} };
-    d.addEventListener('click', function (e) {
-      var a = e.target.closest('a[href^="https://wa.me"]');
-      if (!a || a === go || seen()) return;
-      e.preventDefault();
-      go.href = a.href;
-      dlg.showModal();
-      window.dataLayer.push({ event: 'view_aviso_convenio', cta_origin: a.getAttribute('data-cta-origin') || '' });
-    });
-    go.addEventListener('click', function () { mark(); dlg.close(); });
-    dlg.querySelectorAll('[data-notice-close]').forEach(function (b) { b.addEventListener('click', function () { dlg.close(); }); });
-    dlg.addEventListener('click', function (e) { if (e.target === dlg) dlg.close(); });
-  }
 })();
